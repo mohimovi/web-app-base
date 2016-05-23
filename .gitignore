@@ -4,3 +4,4 @@ vendor/
 .env
 *.swp
 *~
+.DS_Store
