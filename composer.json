@@ -1,12 +1,14 @@
 {
     "require": {
         "vlucas/phpdotenv": "^2.2",
-        "slim/slim": "^3.4"
+        "slim/slim": "^3.4",
+        "phpunit/phpunit": "^5.3"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "App\\Controller\\": "controller/"
+            "App\\": "lib/",
+            "App\\Controller\\": "controller/",
+            "App\\Test\\": "test/"
         }
     }
 }

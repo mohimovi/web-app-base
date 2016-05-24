@@ -1,3 +1,4 @@
+.PHONY: composer.phar install install-dev server test
 
 composer.phar:
 	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -13,3 +14,6 @@ install-dev: composer.phar
 
 server:
 	php -S 0.0.0.0:8000 -t public/
+
+test:
+	php vendor/bin/phpunit --bootstrap test/bootstrap.php test/
