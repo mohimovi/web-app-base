@@ -1,4 +1,6 @@
-.PHONY: composer.phar install install-dev server test
+CODE_SNIFFER_OPTIONS = --colors --standard="psr2" --encoding="utf-8"
+
+.PHONY: composer.phar install install-dev server cs fmt test
 
 composer.phar:
 	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -14,6 +16,12 @@ install-dev: composer.phar
 
 server:
 	php -S 0.0.0.0:8000 -t public/
+
+cs:
+	php vendor/bin/phpcs $(CODE_SNIFFER_OPTIONS) lib/
+
+fmt:
+	php vendor/bin/phpcbf $(CODE_SNIFFER_OPTIONS) lib/
 
 test:
 	php vendor/bin/phpunit --bootstrap test/bootstrap.php test/
