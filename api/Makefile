@@ -26,4 +26,4 @@ fmt:
 	php vendor/bin/phpcbf $(CODE_SNIFFER_OPTIONS) lib/
 
 test:
-	php vendor/bin/phpunit --bootstrap test/bootstrap.php test/
+	php vendor/bin/phpunit -c test/phpunit.xml --bootstrap bootstrap.php test/
