@@ -7,10 +7,13 @@ composer.phar:
 	php composer-setup.php
 	php -r "unlink('composer-setup.php');"
 
-install: composer.phar
+.env:
+	cp .env.example .env
+
+install: .env composer.phar
 	./composer.phar install --no-dev --prefer-dist --optimize-autoloader --no-interaction
 
-install-dev: composer.phar
+install-dev: .env composer.phar
 	./composer.phar install --dev --prefer-dist --no-interaction
 
 server:
