@@ -27,3 +27,4 @@ fmt:
 
 test:
 	php vendor/bin/phpunit -c test/phpunit.xml --bootstrap bootstrap.php test/
+	vendor/bin/security-checker security:check composer.lock
